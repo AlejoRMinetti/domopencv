@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/casa">
+        <file>livingOn.png</file>
+        <file>livingOff.png</file>
+        <file>dormitorioOn.png</file>
+        <file>dormitorioOff.png</file>
+        <file>cocinaOn.png</file>
+        <file>cocinaOff.png</file>
+        <file>banioOn.png</file>
+        <file>banioOff.png</file>
+    </qresource>
+</RCC>

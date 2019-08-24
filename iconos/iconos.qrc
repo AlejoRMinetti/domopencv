@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/iconos">
+        <file>icon_qt.png</file>
+        <file>building.png</file>
+    </qresource>
+</RCC>
