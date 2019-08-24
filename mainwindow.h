@@ -7,6 +7,8 @@ namespace Ui {
 class MainWindow;
 }
 
+class MainVideoCapture;
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -16,10 +18,11 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_push_Dormitorio_clicked();
+    void on_Tabs_tabBarClicked(int index);
 
 private:
     Ui::MainWindow *ui;
+    MainVideoCapture *mOpenCV_videoCapture;
 };
 
 #endif // MAINWINDOW_H

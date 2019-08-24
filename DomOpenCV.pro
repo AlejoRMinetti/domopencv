@@ -26,13 +26,18 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+        video/mainvideocapture.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+        video/mainvideocapture.h
 
 FORMS += \
         mainwindow.ui
+
+INCLUDEPATH += 'pkg-config --cflags opencv'
+LIBS        += `pkg-config --libs opencv`
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
