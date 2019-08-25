@@ -12,6 +12,8 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(mOpenCV_videoCapture, &MainVideoCapture::newPixmapCapture,this,[&](){
         ui->opencvFrame->setPixmap(mOpenCV_videoCapture->pixmap()/*.scaled(320,240)*/);
     });
+    // arraque desde el inicio las capturas
+    mOpenCV_videoCapture->start(QThread::HighPriority);
 }
 
 MainWindow::~MainWindow()
@@ -22,5 +24,5 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_Tabs_tabBarClicked(int index)
 {
-    mOpenCV_videoCapture->start(QThread::HighPriority);
+
 }
