@@ -3,4 +3,55 @@
         <file>icon_qt.png</file>
         <file>building.png</file>
     </qresource>
+    <qresource prefix="/">
+        <file>abrir.png</file>
+        <file>agregar-usuario.png</file>
+        <file>ajustes.png</file>
+        <file>alarma Off.png</file>
+        <file>alarmaOn.png</file>
+        <file>anadir-amigo.png</file>
+        <file>apagado .png</file>
+        <file>bombillaOff.png</file>
+        <file>bombillaOn.png</file>
+        <file>building.png</file>
+        <file>calendario-semanal.png</file>
+        <file>cancelar.png</file>
+        <file>candado.png</file>
+        <file>casa.png</file>
+        <file>casa_.png</file>
+        <file>cerrar.png</file>
+        <file>clave.png</file>
+        <file>comprobado.png</file>
+        <file>croquis.jpg</file>
+        <file>despertador.png</file>
+        <file>eliminar.png</file>
+        <file>en-espera.png</file>
+        <file>escribir.png</file>
+        <file>espalda.png</file>
+        <file>flecha-derecha.png</file>
+        <file>flecha-hacia-abajo.png</file>
+        <file>flecha-hacia-arriba.png</file>
+        <file>flecha-hacia-la-izquierda.png</file>
+        <file>goma-de-borrar.png</file>
+        <file>hora-de-acostarse.png</file>
+        <file>icon_qt.png</file>
+        <file>iconoLog.png</file>
+        <file>iconos.qrc</file>
+        <file>images.png</file>
+        <file>insertar.png</file>
+        <file>Logo.png</file>
+        <file>Logo1.png</file>
+        <file>LogoProyect.png</file>
+        <file>motor-de-busqueda.png</file>
+        <file>navegar.png</file>
+        <file>nuevo.png</file>
+        <file>quitar.png</file>
+        <file>soleado.png</file>
+        <file>usuario 2.png</file>
+        <file>usuario-hombre.png</file>
+        <file>usuario.png</file>
+        <file>utn.jpeg</file>
+        <file>utnfrba.png</file>
+        <file>utnNegro.png</file>
+    </qresource>
 </RCC>

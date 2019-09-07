@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RegsUsers</class>
+ <widget class="QMainWindow" name="RegsUsers">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>425</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>425</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>425</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="1">
+     <widget class="QTableView" name="tableView_Users"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="minimumSize">
+    <size>
+     <width>425</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>425</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionAtras"/>
+   <addaction name="separator"/>
+   <addaction name="actionAgregar"/>
+   <addaction name="separator"/>
+   <addaction name="actionEliminar"/>
+   <addaction name="separator"/>
+   <addaction name="actionSalir"/>
+  </widget>
+  <action name="actionAgregar">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/icon/anadir-amigo.png</normaloff>:/icon/anadir-amigo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Agregar</string>
+   </property>
+  </action>
+  <action name="actionEliminar">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/icon/goma-de-borrar.png</normaloff>:/icon/goma-de-borrar.png</iconset>
+   </property>
+   <property name="text">
+    <string>Borrar</string>
+   </property>
+  </action>
+  <action name="actionAtras">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/icon/espalda.png</normaloff>:/icon/espalda.png</iconset>
+   </property>
+   <property name="text">
+    <string>Atras</string>
+   </property>
+  </action>
+  <action name="actionSalir">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/icon/cancelar.png</normaloff>:/icon/cancelar.png</iconset>
+   </property>
+   <property name="text">
+    <string>Salir</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

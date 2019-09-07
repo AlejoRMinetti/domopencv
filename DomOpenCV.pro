@@ -25,15 +25,26 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        DataBase/adduser.cpp \
+        DataBase/database.cpp \
+        DataBase/regsUsers.cpp \
+        Login/login.cpp \
         main.cpp \
         mainwindow.cpp \
         video/mainvideocapture.cpp
 
 HEADERS += \
+        DataBase/adduser.h \
+        DataBase/database.h \
+        DataBase/regsUsers.h \
+        Login/login.h \
         mainwindow.h \
         video/mainvideocapture.h
 
 FORMS += \
+        DataBase/adduser.ui \
+        DataBase/regsUsers.ui \
+        Login/login.ui \
         mainwindow.ui
 
 INCLUDEPATH += 'pkg-config --cflags opencv'
