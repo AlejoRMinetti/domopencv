@@ -14,6 +14,8 @@ MainWindow::MainWindow(QWidget *parent) :
     });
     // arraque desde el inicio las capturas
     mOpenCV_videoCapture->start(QThread::HighPriority);
+
+    setWindowTitle(tr("DomOpenCV"));
 }
 
 MainWindow::~MainWindow()

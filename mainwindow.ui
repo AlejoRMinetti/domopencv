@@ -21,7 +21,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="iconos/iconos.qrc">
-    <normaloff>:/iconos/building.png</normaloff>:/iconos/building.png</iconset>
+    <normaloff>:/Logo.png</normaloff>:/Logo.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -1778,23 +1778,6 @@
     </item>
    </layout>
   </widget>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1093</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuInfo">
-    <property name="title">
-     <string>Ayuda</string>
-    </property>
-    <addaction name="actionAbout_Qt"/>
-   </widget>
-   <addaction name="menuInfo"/>
-  </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionAbout_Qt">
    <property name="icon">
@@ -1810,6 +1793,8 @@
  <resources>
   <include location="imagenes/imagenes.qrc"/>
   <include location="imagenes/habitaciones.qrc"/>
+  <include location="iconos/iconos.qrc"/>
+  <include location="iconos/iconos.qrc"/>
   <include location="iconos/iconos.qrc"/>
  </resources>
  <connections>

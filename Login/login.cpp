@@ -15,6 +15,8 @@ LogIn::LogIn(QWidget *parent) :
     if(!mydb->configuraBaseDatos()){
         qDebug()<<mydb->getError();
     }
+
+    setWindowTitle(tr("Ingreso a DomOpenCV"));
 }
 
 LogIn::~LogIn()
@@ -45,7 +47,7 @@ void LogIn::on_pushButton_Acceder_clicked()
         QMessageBox::warning(this,"Error","Usuario y/o contraseña inválida");
         return;
     }
-    app = new Aplicacion(this);
+    app = new MainWindow(this);
     app->show();
     this->setVisible(false);
 }

@@ -7,7 +7,7 @@
 #include <QSqlQuery>
 #include <QDebug>
 #include "DataBase/regsUsers.h"
-#include "aplicacion.h"
+#include "mainwindow.h"
 
 namespace Ui {
 class LogIn;
@@ -35,7 +35,7 @@ private slots:
 private:
     Ui::LogIn *ui;
     RegsUsers *regs;
-    Aplicacion *app;
+    MainWindow *app;
     DataBase *mydb;
 };
 

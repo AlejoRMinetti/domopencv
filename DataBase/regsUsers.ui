@@ -64,8 +64,8 @@
   </widget>
   <action name="actionAgregar">
    <property name="icon">
-    <iconset resource="../resource.qrc">
-     <normaloff>:/icon/anadir-amigo.png</normaloff>:/icon/anadir-amigo.png</iconset>
+    <iconset resource="../iconos/iconos.qrc">
+     <normaloff>:/anadir-amigo.png</normaloff>:/anadir-amigo.png</iconset>
    </property>
    <property name="text">
     <string>Agregar</string>
@@ -73,8 +73,8 @@
   </action>
   <action name="actionEliminar">
    <property name="icon">
-    <iconset resource="../resource.qrc">
-     <normaloff>:/icon/goma-de-borrar.png</normaloff>:/icon/goma-de-borrar.png</iconset>
+    <iconset resource="../iconos/iconos.qrc">
+     <normaloff>:/goma-de-borrar.png</normaloff>:/goma-de-borrar.png</iconset>
    </property>
    <property name="text">
     <string>Borrar</string>
@@ -82,8 +82,8 @@
   </action>
   <action name="actionAtras">
    <property name="icon">
-    <iconset resource="../resource.qrc">
-     <normaloff>:/icon/espalda.png</normaloff>:/icon/espalda.png</iconset>
+    <iconset resource="../iconos/iconos.qrc">
+     <normaloff>:/espalda.png</normaloff>:/espalda.png</iconset>
    </property>
    <property name="text">
     <string>Atras</string>
@@ -91,8 +91,8 @@
   </action>
   <action name="actionSalir">
    <property name="icon">
-    <iconset resource="../resource.qrc">
-     <normaloff>:/icon/cancelar.png</normaloff>:/icon/cancelar.png</iconset>
+    <iconset resource="../iconos/iconos.qrc">
+     <normaloff>:/cancelar.png</normaloff>:/cancelar.png</iconset>
    </property>
    <property name="text">
     <string>Salir</string>
@@ -100,7 +100,9 @@
   </action>
  </widget>
  <resources>
-  <include location="../resource.qrc"/>
+  <include location="../iconos/iconos.qrc"/>
+  <include location="../iconos/iconos.qrc"/>
+  <include location="../iconos/iconos.qrc"/>
  </resources>
  <connections/>
 </ui>

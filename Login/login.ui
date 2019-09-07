@@ -255,8 +255,8 @@
    <string>Aplicación</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resource.qrc">
-    <normaloff>:/icon/Logo.png</normaloff>:/icon/Logo.png</iconset>
+   <iconset resource="../iconos/iconos.qrc">
+    <normaloff>:/Logo.png</normaloff>:/Logo.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_2">
@@ -283,7 +283,7 @@
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap resource="resource.qrc">:/icon/Logo.png</pixmap>
+           <pixmap resource="../iconos/iconos.qrc">:/Logo.png</pixmap>
           </property>
           <property name="scaledContents">
            <bool>true</bool>
@@ -438,7 +438,7 @@
                     <string/>
                    </property>
                    <property name="pixmap">
-                    <pixmap resource="resource.qrc">:/icon/usuario 2.png</pixmap>
+                    <pixmap resource="../iconos/iconos.qrc">:/usuario 2.png</pixmap>
                    </property>
                    <property name="scaledContents">
                     <bool>true</bool>
@@ -619,7 +619,7 @@
                     <string/>
                    </property>
                    <property name="pixmap">
-                    <pixmap resource="resource.qrc">:/icon/clave.png</pixmap>
+                    <pixmap resource="../iconos/iconos.qrc">:/clave.png</pixmap>
                    </property>
                    <property name="scaledContents">
                     <bool>true</bool>
@@ -922,6 +922,7 @@
     <property name="title">
      <string>Opciones</string>
     </property>
+    <addaction name="separator"/>
     <addaction name="action_Config"/>
     <addaction name="separator"/>
     <addaction name="separator"/>
@@ -931,17 +932,17 @@
   </widget>
   <action name="action_Config">
    <property name="icon">
-    <iconset resource="resource.qrc">
-     <normaloff>:/icon/ajustes.png</normaloff>:/icon/ajustes.png</iconset>
+    <iconset resource="../iconos/iconos.qrc">
+     <normaloff>:/escribir.png</normaloff>:/escribir.png</iconset>
    </property>
    <property name="text">
-    <string>Configuracion</string>
+    <string>Usuarios</string>
    </property>
   </action>
   <action name="actionSalir">
    <property name="icon">
-    <iconset resource="resource.qrc">
-     <normaloff>:/icon/cancelar.png</normaloff>:/icon/cancelar.png</iconset>
+    <iconset resource="../iconos/iconos.qrc">
+     <normaloff>:/cancelar.png</normaloff>:/cancelar.png</iconset>
    </property>
    <property name="text">
     <string>Salir</string>
@@ -955,7 +956,9 @@
   <tabstop>pushButton_Acceder</tabstop>
  </tabstops>
  <resources>
-  <include location="resource.qrc"/>
+  <include location="../iconos/iconos.qrc"/>
+  <include location="../iconos/iconos.qrc"/>
+  <include location="../iconos/iconos.qrc"/>
  </resources>
  <connections/>
 </ui>

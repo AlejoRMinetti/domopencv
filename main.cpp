@@ -1,11 +1,13 @@
-#include "mainwindow.h"
+#include "Login/login.h"
 #include <QApplication>
+
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    a.setStyle("funsion");
-    MainWindow w;
+
+    // comienzo en pantalla de login
+    LogIn w;
     w.show();
 
     return a.exec();
