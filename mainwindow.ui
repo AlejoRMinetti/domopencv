@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1065</width>
-    <height>724</height>
+    <width>1093</width>
+    <height>549</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -256,8 +256,14 @@
                 <property name="textFormat">
                  <enum>Qt::AutoText</enum>
                 </property>
+                <property name="pixmap">
+                 <pixmap resource="imagenes/imagenes.qrc">:/sinSenial.jpg</pixmap>
+                </property>
                 <property name="scaledContents">
                  <bool>false</bool>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
                 </property>
                </widget>
               </item>
@@ -284,8 +290,14 @@
                 <property name="textFormat">
                  <enum>Qt::AutoText</enum>
                 </property>
+                <property name="pixmap">
+                 <pixmap resource="imagenes/imagenes.qrc">:/sinSenial.jpg</pixmap>
+                </property>
                 <property name="scaledContents">
                  <bool>false</bool>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
                 </property>
                </widget>
               </item>
@@ -316,8 +328,14 @@
                 <property name="textFormat">
                  <enum>Qt::AutoText</enum>
                 </property>
+                <property name="pixmap">
+                 <pixmap resource="imagenes/imagenes.qrc">:/sinSenial.jpg</pixmap>
+                </property>
                 <property name="scaledContents">
                  <bool>false</bool>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
                 </property>
                </widget>
               </item>
@@ -344,8 +362,14 @@
                 <property name="textFormat">
                  <enum>Qt::AutoText</enum>
                 </property>
+                <property name="pixmap">
+                 <pixmap resource="imagenes/imagenes.qrc">:/sinSenial.jpg</pixmap>
+                </property>
                 <property name="scaledContents">
                  <bool>false</bool>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
                 </property>
                </widget>
               </item>
@@ -534,8 +558,14 @@
                   <property name="textFormat">
                    <enum>Qt::AutoText</enum>
                   </property>
+                  <property name="pixmap">
+                   <pixmap resource="imagenes/imagenes.qrc">:/sinSenial.jpg</pixmap>
+                  </property>
                   <property name="scaledContents">
                    <bool>false</bool>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
@@ -562,8 +592,14 @@
                   <property name="textFormat">
                    <enum>Qt::AutoText</enum>
                   </property>
+                  <property name="pixmap">
+                   <pixmap resource="imagenes/imagenes.qrc">:/sinSenial.jpg</pixmap>
+                  </property>
                   <property name="scaledContents">
                    <bool>false</bool>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
@@ -597,8 +633,14 @@
                   <property name="textFormat">
                    <enum>Qt::AutoText</enum>
                   </property>
+                  <property name="pixmap">
+                   <pixmap resource="imagenes/imagenes.qrc">:/sinSenial.jpg</pixmap>
+                  </property>
                   <property name="scaledContents">
                    <bool>false</bool>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
@@ -625,8 +667,14 @@
                   <property name="textFormat">
                    <enum>Qt::AutoText</enum>
                   </property>
+                  <property name="pixmap">
+                   <pixmap resource="imagenes/imagenes.qrc">:/sinSenial.jpg</pixmap>
+                  </property>
                   <property name="scaledContents">
                    <bool>false</bool>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
@@ -1735,7 +1783,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1065</width>
+     <width>1093</width>
      <height>22</height>
     </rect>
    </property>
@@ -1760,8 +1808,9 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="iconos/iconos.qrc"/>
+  <include location="imagenes/imagenes.qrc"/>
   <include location="imagenes/habitaciones.qrc"/>
+  <include location="iconos/iconos.qrc"/>
  </resources>
  <connections>
   <connection>
@@ -1775,8 +1824,72 @@
      <y>105</y>
     </hint>
     <hint type="destinationlabel">
-     <x>281</x>
-     <y>164</y>
+     <x>534</x>
+     <y>225</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>IntLuminicaDial</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>IntensidadBar</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>687</x>
+     <y>365</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>701</x>
+     <y>435</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>IntUnicaSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>IntensidadBar</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>772</x>
+     <y>666</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>750</x>
+     <y>436</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>IntensidadBar</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>IntLuminicaDial</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>610</x>
+     <y>433</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>620</x>
+     <y>374</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>IntensidadBar</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>IntUnicaSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>482</x>
+     <y>437</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>482</x>
+     <y>665</y>
     </hint>
    </hints>
   </connection>

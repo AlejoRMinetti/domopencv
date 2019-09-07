@@ -10,7 +10,7 @@ MainWindow::MainWindow(QWidget *parent) :
     // openCV video
     mOpenCV_videoCapture = new MainVideoCapture(this);
     connect(mOpenCV_videoCapture, &MainVideoCapture::newPixmapCapture,this,[&](){
-        ui->opencvFrame->setPixmap(mOpenCV_videoCapture->pixmap()/*.scaled(320,240)*/);
+        ui->opencvFrame->setPixmap(mOpenCV_videoCapture->pixmap().scaled(320,240));
     });
     // arraque desde el inicio las capturas
     mOpenCV_videoCapture->start(QThread::HighPriority);
