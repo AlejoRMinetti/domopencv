@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "video/mainvideocapture.h"
+#include "video/camaraConfig.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -8,21 +9,24 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     // openCV video
-    mOpenCV_videoCapture = new MainVideoCapture(this);
-    connect(mOpenCV_videoCapture, &MainVideoCapture::newPixmapCapture,this,[&](){
-        ui->opencvFrame->setPixmap(mOpenCV_videoCapture->pixmap().scaled(320,240));
+    videoCapture = new MainVideoCapture(this);
+    connect(videoCapture, &MainVideoCapture::newPixmapCapture,this,[&](){
+        ui->opencvFrame->setPixmap(videoCapture->getAllDetections().scaled(320,240)); // mostrar imagen RGB
     });
     // arraque desde el inicio las capturas
-    mOpenCV_videoCapture->start(QThread::HighPriority);
+    videoCapture->start(QThread::HighPriority);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-    mOpenCV_videoCapture->terminate();
+    videoCapture->terminate();
 }
 
-void MainWindow::on_Tabs_tabBarClicked(int index)
-{
+/////////// configuracion de camaras
 
+void MainWindow::on_pushButton_config_cam1_released()
+{
+    camaraConfig w;
+    w.show();
 }

@@ -475,7 +475,7 @@
              <number>0</number>
             </property>
             <widget class="QWidget" name="page">
-             <layout class="QVBoxLayout" name="verticalLayout_12" stretch="0,20,20">
+             <layout class="QVBoxLayout" name="verticalLayout_12">
               <item>
                <layout class="QHBoxLayout" name="horizontalLayout_25" stretch="0,0,0">
                 <property name="spacing">
@@ -570,6 +570,37 @@
                  </widget>
                 </item>
                 <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_18">
+                  <item>
+                   <widget class="QLabel" name="label_13">
+                    <property name="text">
+                     <string>Habitacion:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="comboBox_habit_7"/>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_14">
+                    <property name="text">
+                     <string>Camara:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="comboBox_cam_fuente_7"/>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_config_cam1">
+                    <property name="text">
+                     <string>Configurar</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
                  <widget class="QLabel" name="cam2">
                   <property name="minimumSize">
                    <size>
@@ -602,6 +633,37 @@
                    <set>Qt::AlignCenter</set>
                   </property>
                  </widget>
+                </item>
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_16">
+                  <item>
+                   <widget class="QLabel" name="label_9">
+                    <property name="text">
+                     <string>Habitacion:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="comboBox_habit_5"/>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_10">
+                    <property name="text">
+                     <string>Camara:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="comboBox_cam_fuente_5"/>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_config_cam2">
+                    <property name="text">
+                     <string>Configurar</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
                 </item>
                </layout>
               </item>
@@ -645,6 +707,37 @@
                  </widget>
                 </item>
                 <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_15">
+                  <item>
+                   <widget class="QLabel" name="label_7">
+                    <property name="text">
+                     <string>Habitacion:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="comboBox_habit_4"/>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_8">
+                    <property name="text">
+                     <string>Camara:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="comboBox_cam_fuente_4"/>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_config_cam3">
+                    <property name="text">
+                     <string>Configurar</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
                  <widget class="QLabel" name="cam4">
                   <property name="minimumSize">
                    <size>
@@ -677,6 +770,37 @@
                    <set>Qt::AlignCenter</set>
                   </property>
                  </widget>
+                </item>
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_17">
+                  <item>
+                   <widget class="QLabel" name="label_11">
+                    <property name="text">
+                     <string>Habitacion:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="comboBox_habit_6"/>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_12">
+                    <property name="text">
+                     <string>Camara:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="comboBox_cam_fuente_6"/>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_config_cam4">
+                    <property name="text">
+                     <string>Configurar</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
                 </item>
                </layout>
               </item>
@@ -1808,9 +1932,9 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
+  <include location="iconos/iconos.qrc"/>
   <include location="imagenes/imagenes.qrc"/>
   <include location="imagenes/habitaciones.qrc"/>
-  <include location="iconos/iconos.qrc"/>
  </resources>
  <connections>
   <connection>

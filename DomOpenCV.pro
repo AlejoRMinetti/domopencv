@@ -27,14 +27,17 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
+        video/camaraConfig.cpp \
         video/mainvideocapture.cpp
 
 HEADERS += \
         mainwindow.h \
+        video/camaraConfig.h \
         video/mainvideocapture.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+        video/camaraConfig.ui
 
 INCLUDEPATH += 'pkg-config --cflags opencv'
 LIBS        += `pkg-config --libs opencv`
