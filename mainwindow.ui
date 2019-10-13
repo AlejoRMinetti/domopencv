@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1093</width>
-    <height>549</height>
+    <width>1081</width>
+    <height>630</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -234,7 +234,7 @@
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout_2">
               <item>
-               <widget class="QLabel" name="opencvFrame">
+               <widget class="QLabel" name="opencvFrame_1">
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
@@ -475,9 +475,9 @@
              <number>0</number>
             </property>
             <widget class="QWidget" name="page">
-             <layout class="QVBoxLayout" name="verticalLayout_12">
+             <layout class="QVBoxLayout" name="verticalLayout_14">
               <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_25" stretch="0,0,0">
+               <layout class="QHBoxLayout" name="horizontalLayout_25" stretch="0,0,0,0">
                 <property name="spacing">
                  <number>8</number>
                 </property>
@@ -511,9 +511,12 @@
                    </font>
                   </property>
                   <property name="text">
-                   <string>Camaras</string>
+                   <string>Configuracion de camara:</string>
                   </property>
                  </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="comboBox_cam_fuente_5"/>
                 </item>
                 <item>
                  <spacer name="horizontalSpacer_30">
@@ -531,274 +534,390 @@
                </layout>
               </item>
               <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_26">
-                <property name="spacing">
-                 <number>8</number>
-                </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_38">
                 <item>
-                 <widget class="QLabel" name="cam1">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>123234</width>
-                    <height>34535</height>
-                   </size>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Box</enum>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                  <property name="textFormat">
-                   <enum>Qt::AutoText</enum>
-                  </property>
-                  <property name="pixmap">
-                   <pixmap resource="imagenes/imagenes.qrc">:/sinSenial.jpg</pixmap>
-                  </property>
-                  <property name="scaledContents">
-                   <bool>false</bool>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <layout class="QVBoxLayout" name="verticalLayout_18">
-                  <item>
-                   <widget class="QLabel" name="label_13">
-                    <property name="text">
-                     <string>Habitacion:</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QComboBox" name="comboBox_habit_7"/>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="label_14">
-                    <property name="text">
-                     <string>Camara:</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QComboBox" name="comboBox_cam_fuente_7"/>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pushButton_config_cam1">
-                    <property name="text">
-                     <string>Configurar</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-                <item>
-                 <widget class="QLabel" name="cam2">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>123234</width>
-                    <height>34535</height>
-                   </size>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Box</enum>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                  <property name="textFormat">
-                   <enum>Qt::AutoText</enum>
-                  </property>
-                  <property name="pixmap">
-                   <pixmap resource="imagenes/imagenes.qrc">:/sinSenial.jpg</pixmap>
-                  </property>
-                  <property name="scaledContents">
-                   <bool>false</bool>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <layout class="QVBoxLayout" name="verticalLayout_16">
+                 <layout class="QVBoxLayout" name="verticalLayout_12">
                   <item>
                    <widget class="QLabel" name="label_9">
                     <property name="text">
-                     <string>Habitacion:</string>
+                     <string>Intensidad:</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QComboBox" name="comboBox_habit_5"/>
+                   <widget class="QLabel" name="label_3">
+                    <property name="text">
+                     <string>H_MIN</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_31">
+                    <item>
+                     <widget class="QSlider" name="hminSlider">
+                      <property name="maximum">
+                       <number>255</number>
+                      </property>
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QSpinBox" name="hminBox">
+                      <property name="maximum">
+                       <number>255</number>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_4">
+                    <property name="text">
+                     <string>H_MAX</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_32">
+                    <item>
+                     <widget class="QSlider" name="hmaxSlider">
+                      <property name="maximum">
+                       <number>255</number>
+                      </property>
+                      <property name="value">
+                       <number>255</number>
+                      </property>
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QSpinBox" name="hmaxBox">
+                      <property name="maximum">
+                       <number>255</number>
+                      </property>
+                      <property name="value">
+                       <number>255</number>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </item>
                   <item>
                    <widget class="QLabel" name="label_10">
                     <property name="text">
-                     <string>Camara:</string>
+                     <string>Saturacion:</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QComboBox" name="comboBox_cam_fuente_5"/>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pushButton_config_cam2">
+                   <widget class="QLabel" name="label">
                     <property name="text">
-                     <string>Configurar</string>
+                     <string>S_MIN</string>
                     </property>
                    </widget>
                   </item>
-                 </layout>
-                </item>
-               </layout>
-              </item>
-              <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_27">
-                <property name="spacing">
-                 <number>8</number>
-                </property>
-                <item>
-                 <widget class="QLabel" name="cam3">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>123234</width>
-                    <height>34535</height>
-                   </size>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Box</enum>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                  <property name="textFormat">
-                   <enum>Qt::AutoText</enum>
-                  </property>
-                  <property name="pixmap">
-                   <pixmap resource="imagenes/imagenes.qrc">:/sinSenial.jpg</pixmap>
-                  </property>
-                  <property name="scaledContents">
-                   <bool>false</bool>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <layout class="QVBoxLayout" name="verticalLayout_15">
                   <item>
-                   <widget class="QLabel" name="label_7">
+                   <layout class="QHBoxLayout" name="horizontalLayout_33">
+                    <item>
+                     <widget class="QSlider" name="sminSlider">
+                      <property name="maximum">
+                       <number>255</number>
+                      </property>
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QSpinBox" name="sminBox">
+                      <property name="maximum">
+                       <number>255</number>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_2">
                     <property name="text">
-                     <string>Habitacion:</string>
+                     <string>S_MAX</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QComboBox" name="comboBox_habit_4"/>
+                   <layout class="QHBoxLayout" name="horizontalLayout_34">
+                    <item>
+                     <widget class="QSlider" name="smaxSlider">
+                      <property name="maximum">
+                       <number>255</number>
+                      </property>
+                      <property name="value">
+                       <number>255</number>
+                      </property>
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QSpinBox" name="smaxBox">
+                      <property name="maximum">
+                       <number>255</number>
+                      </property>
+                      <property name="value">
+                       <number>255</number>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_11">
+                    <property name="text">
+                     <string>Color:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_5">
+                    <property name="text">
+                     <string>V_MIN</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_35">
+                    <item>
+                     <widget class="QSlider" name="vminSlider">
+                      <property name="maximum">
+                       <number>255</number>
+                      </property>
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QSpinBox" name="vminBox">
+                      <property name="maximum">
+                       <number>255</number>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_6">
+                    <property name="text">
+                     <string>V_MAX</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_36">
+                    <item>
+                     <widget class="QSlider" name="vmaxSlider">
+                      <property name="maximum">
+                       <number>255</number>
+                      </property>
+                      <property name="value">
+                       <number>255</number>
+                      </property>
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QSpinBox" name="vmaxBox">
+                      <property name="maximum">
+                       <number>255</number>
+                      </property>
+                      <property name="value">
+                       <number>255</number>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </item>
                   <item>
                    <widget class="QLabel" name="label_8">
                     <property name="text">
-                     <string>Camara:</string>
+                     <string>Nombre:</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QComboBox" name="comboBox_cam_fuente_4"/>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pushButton_config_cam3">
-                    <property name="text">
-                     <string>Configurar</string>
-                    </property>
-                   </widget>
+                   <layout class="QHBoxLayout" name="horizontalLayout_37">
+                    <item>
+                     <widget class="QLineEdit" name="nameLineEdit"/>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="addButton">
+                      <property name="text">
+                       <string>Agregar</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </item>
                  </layout>
                 </item>
                 <item>
-                 <widget class="QLabel" name="cam4">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>123234</width>
-                    <height>34535</height>
-                   </size>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Box</enum>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                  <property name="textFormat">
-                   <enum>Qt::AutoText</enum>
-                  </property>
-                  <property name="pixmap">
-                   <pixmap resource="imagenes/imagenes.qrc">:/sinSenial.jpg</pixmap>
-                  </property>
-                  <property name="scaledContents">
-                   <bool>false</bool>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <layout class="QVBoxLayout" name="verticalLayout_17">
+                 <layout class="QVBoxLayout" name="verticalLayout_13">
                   <item>
-                   <widget class="QLabel" name="label_11">
-                    <property name="text">
-                     <string>Habitacion:</string>
+                   <layout class="QHBoxLayout" name="horizontalLayout_26">
+                    <property name="spacing">
+                     <number>8</number>
                     </property>
-                   </widget>
+                    <item>
+                     <widget class="QLabel" name="camRGB_all">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>123234</width>
+                        <height>34535</height>
+                       </size>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Box</enum>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="textFormat">
+                       <enum>Qt::AutoText</enum>
+                      </property>
+                      <property name="pixmap">
+                       <pixmap resource="imagenes/imagenes.qrc">:/sinSenial.jpg</pixmap>
+                      </property>
+                      <property name="scaledContents">
+                       <bool>false</bool>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="camRGB_actual">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>123234</width>
+                        <height>34535</height>
+                       </size>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Box</enum>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="textFormat">
+                       <enum>Qt::AutoText</enum>
+                      </property>
+                      <property name="pixmap">
+                       <pixmap resource="imagenes/imagenes.qrc">:/sinSenial.jpg</pixmap>
+                      </property>
+                      <property name="scaledContents">
+                       <bool>false</bool>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </item>
                   <item>
-                   <widget class="QComboBox" name="comboBox_habit_6"/>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="label_12">
-                    <property name="text">
-                     <string>Camara:</string>
+                   <layout class="QHBoxLayout" name="horizontalLayout_27">
+                    <property name="spacing">
+                     <number>8</number>
                     </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QComboBox" name="comboBox_cam_fuente_6"/>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pushButton_config_cam4">
-                    <property name="text">
-                     <string>Configurar</string>
-                    </property>
-                   </widget>
+                    <item>
+                     <widget class="QLabel" name="camHSV">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>123234</width>
+                        <height>34535</height>
+                       </size>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Box</enum>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="textFormat">
+                       <enum>Qt::AutoText</enum>
+                      </property>
+                      <property name="pixmap">
+                       <pixmap resource="imagenes/imagenes.qrc">:/sinSenial.jpg</pixmap>
+                      </property>
+                      <property name="scaledContents">
+                       <bool>false</bool>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="cam_umbral">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>123234</width>
+                        <height>34535</height>
+                       </size>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Box</enum>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="textFormat">
+                       <enum>Qt::AutoText</enum>
+                      </property>
+                      <property name="pixmap">
+                       <pixmap resource="imagenes/imagenes.qrc">:/sinSenial.jpg</pixmap>
+                      </property>
+                      <property name="scaledContents">
+                       <bool>false</bool>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </item>
                  </layout>
                 </item>
@@ -1907,7 +2026,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1093</width>
+     <width>1081</width>
      <height>22</height>
     </rect>
    </property>
@@ -1932,9 +2051,9 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
+  <include location="imagenes/habitaciones.qrc"/>
   <include location="iconos/iconos.qrc"/>
   <include location="imagenes/imagenes.qrc"/>
-  <include location="imagenes/habitaciones.qrc"/>
  </resources>
  <connections>
   <connection>
@@ -1960,12 +2079,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>687</x>
-     <y>365</y>
+     <x>335</x>
+     <y>120</y>
     </hint>
     <hint type="destinationlabel">
-     <x>701</x>
-     <y>435</y>
+     <x>335</x>
+     <y>99</y>
     </hint>
    </hints>
   </connection>
@@ -1976,12 +2095,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>772</x>
-     <y>666</y>
+     <x>335</x>
+     <y>99</y>
     </hint>
     <hint type="destinationlabel">
-     <x>750</x>
-     <y>436</y>
+     <x>335</x>
+     <y>99</y>
     </hint>
    </hints>
   </connection>
@@ -1992,12 +2111,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>610</x>
-     <y>433</y>
+     <x>335</x>
+     <y>99</y>
     </hint>
     <hint type="destinationlabel">
-     <x>620</x>
-     <y>374</y>
+     <x>335</x>
+     <y>120</y>
     </hint>
    </hints>
   </connection>
@@ -2008,12 +2127,108 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>482</x>
-     <y>437</y>
+     <x>335</x>
+     <y>99</y>
     </hint>
     <hint type="destinationlabel">
-     <x>482</x>
-     <y>665</y>
+     <x>335</x>
+     <y>99</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>hminSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>hminBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>350</x>
+     <y>193</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>200</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>hmaxSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>hmaxBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>370</x>
+     <y>245</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>443</x>
+     <y>246</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sminSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>sminBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>327</x>
+     <y>314</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>443</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>smaxSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>smaxBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>372</x>
+     <y>375</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>444</x>
+     <y>370</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>vminSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>vminBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>369</x>
+     <y>450</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>457</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>vmaxSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>vmaxBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>353</x>
+     <y>504</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>509</y>
     </hint>
    </hints>
   </connection>

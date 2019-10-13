@@ -1,4 +1,4 @@
-#ifndef MAINVIDEOCAPTURE_H
+﻿#ifndef MAINVIDEOCAPTURE_H
 #define MAINVIDEOCAPTURE_H
 #include <QPixmap>
 #include <QImage>
@@ -8,13 +8,22 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 
+// para debug
+#include <QDebug>
+
 #define ID_CAMERA 0 //"http://192.168.0.20:8081"
+#define MAX_ID_CAMS 5
+
 
 class MainVideoCapture : public QThread
 {
     Q_OBJECT
 public:
-    MainVideoCapture(QObject *parent = nullptr );
+    MainVideoCapture(int idCam, QObject *parent = nullptr );
+    //for realise cam
+    ~MainVideoCapture(){
+        mVideoCap.release();
+    }
     // PixMaps getter
     QPixmap getRGBpixmap() const;
     QPixmap getHSVpixmap() const;
@@ -23,6 +32,19 @@ public:
     QPixmap getAllDetections() const;
     // binario actual getter
     QPixmap getBinarioDetec() const;
+
+    // check for OK of ID Device
+    static bool isCamIdOk(int idCam){
+        cv::VideoCapture testVideoCap(idCam);
+        if(!testVideoCap.isOpened()){  // check if we succeeded
+            qDebug() << "Id cam: " << idCam << " no admitido.";
+            testVideoCap.release();
+            return 0;
+        }
+        testVideoCap.release();
+        qDebug() << "Id cam: " << idCam << " OK.";
+        return 1;
+    }
 
     // public variables
     ////////// variables de deteccion de objeto
@@ -51,8 +73,13 @@ public:
     // item setter
     item setUpObject(std::string name, int hmin, int hmax, int smin, int smax, int vmin, int vmax);
 
+    bool getPresencia() const;
+
 signals:
     void newPixmapCapture();
+    void presenciaDetectada();
+    void sinPresencia();
+
 protected:
     void run(); //virtual del Qthread
 private:
@@ -69,6 +96,11 @@ private:
     cv::Mat allDetectionsFrame;
     // binario de deteccion actual
     QPixmap binarioDetec;
+
+    // bandera de presencia
+    bool Presencia = false;
+    int DetectandoValidar = 3;
+    int sinDetecValidar = 10;
 
     ///////// Configuracion de objetos captura
     // area de captura
@@ -96,7 +128,9 @@ private:
     std::string numberToString(int number);
     void drawObject(int x, int y, cv::Mat &frame, item tempItem);
     void morphObject(cv::Mat &thresh);
-    void trackObject(int &x, int &y, item tempItem, cv::Mat &cameraFeed);
+    bool trackObject(int &x, int &y, item tempItem, cv::Mat &cameraFeed);
+    // comprueba nuevo evento de deteccion y envia signal, corre en cada imagen
+    void signalDetection(bool prese);
 };
 
 #endif // MAINVIDEOCAPTURE_H

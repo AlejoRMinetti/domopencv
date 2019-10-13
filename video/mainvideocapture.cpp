@@ -4,8 +4,8 @@
 using namespace cv;
 using namespace std;
 
-MainVideoCapture::MainVideoCapture(QObject *parent)
-    : QThread { parent }, mVideoCap { ID_CAMERA }
+MainVideoCapture::MainVideoCapture(int idCam,QObject *parent)
+    : QThread { parent }, mVideoCap { idCam }
 {}
 
 void MainVideoCapture::run()
@@ -39,18 +39,24 @@ void MainVideoCapture::run()
                 // convert a pixmap
                 binarioDetec = cvMatToQPixmap(testObject.threshold);
 
+                bool seDetecto = false; // bandera si salta una deteccion
                 // agregar tracking del objeto detectado al frame
-                trackObject(x, y, testObject, actualDetectFrame);
+                if (trackObject(x, y, testObject, actualDetectFrame))
+                    seDetecto = true;
 
                 actualDetect = cvMatToQPixmap(actualDetectFrame);
 
                 // lo mismo para todos los objetos agregados para deteccion
-                for (unsigned int i = 0; i<objects.size(); i++) {
+                for (unsigned int i = 0; i < objects.size(); i++) {
                     inRange(HSVframe, Scalar(objects[i].H_MIN, objects[i].S_MIN, objects[i].V_MIN), Scalar(objects[i].H_MAX, objects[i].S_MAX, objects[i].V_MAX), objects[i].threshold);
                     morphObject(objects[i].threshold);
-                    trackObject(x, y, objects[i], allDetectionsFrame);
+                    if(trackObject(x, y, objects[i], allDetectionsFrame))
+                        seDetecto = true;
                 }
                 allDetections = cvMatToQPixmap(allDetectionsFrame);
+
+                // check envio de signal por cambio en presencia
+                signalDetection(seDetecto);
 
                 // señal de nueva imagen
                 emit newPixmapCapture();
@@ -190,7 +196,7 @@ void MainVideoCapture::morphObject(Mat &thresh){
 }
 
 // agregar tracking del objeto detectado al frame
-void MainVideoCapture::trackObject(int &x, int &y, item tempItem, Mat &cameraFeed){
+bool MainVideoCapture::trackObject(int &x, int &y, item tempItem, Mat &cameraFeed){
 
     Mat temp;
     tempItem.threshold.copyTo(temp);
@@ -224,14 +230,44 @@ void MainVideoCapture::trackObject(int &x, int &y, item tempItem, Mat &cameraFee
                 }
                 else objectFound = false;
 
-
             }
             //let user know you found an object
             if (objectFound == true){
                 //draw object location on screen
                 drawObject(x, y, cameraFeed, tempItem);
+                return true;
             }
         }
+    }
+    return false;
+}
+
+// comprueba nuevo evento de deteccion y envia signal
+void MainVideoCapture::signalDetection(bool prese){
+    static int contador = 0;
+
+    if( prese != Presencia ){
+
+        if(prese){
+            if( contador > DetectandoValidar ){
+                Presencia = true;
+                contador = 0;
+                emit presenciaDetectada();
+            }else{
+                contador ++;
+            }
+
+        }else{
+            if( contador > sinDetecValidar ){
+                Presencia = false;
+                contador = 0;
+                emit sinPresencia();
+            }else{
+                contador ++;
+            }
+        }
+    }else { //para que no detecte por detecciones aisladas
+        contador = 0;
     }
 }
 
@@ -250,4 +286,9 @@ MainVideoCapture::item MainVideoCapture::setUpObject(string name, int hmin, int 
     temp.V_MAX = vmax;
 
     return temp;
+}
+
+bool MainVideoCapture::getPresencia() const
+{
+    return Presencia;
 }
