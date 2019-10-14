@@ -11,8 +11,8 @@
 // para debug
 #include <QDebug>
 
-#define ID_CAMERA 0 //"http://192.168.0.20:8081"
-#define MAX_ID_CAMS 5
+//#define ID_CAMERA 0 //"http://192.168.0.20:8081"
+#define MAX_ID_CAMS 10
 
 
 class MainVideoCapture : public QThread
@@ -37,12 +37,12 @@ public:
     static bool isCamIdOk(int idCam){
         cv::VideoCapture testVideoCap(idCam);
         if(!testVideoCap.isOpened()){  // check if we succeeded
-            qDebug() << "Id cam: " << idCam << " no admitido.";
+            //qDebug() << "Id cam: " << idCam << " no admitido.";
             testVideoCap.release();
             return 0;
         }
         testVideoCap.release();
-        qDebug() << "Id cam: " << idCam << " OK.";
+        //qDebug() << "Id cam: " << idCam << " OK.";
         return 1;
     }
 

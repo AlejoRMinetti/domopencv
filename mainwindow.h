@@ -25,8 +25,11 @@ private:
     MainVideoCapture *videoCapture[CANT_HABITACIONES];
     int cams_activas = 0;
 
+    // establece los connects de las camaras
+    void CamConnects();
     // Update parametros de configuracion de deteccion
     void UpdateDetectParametros(int idCam);
+
 };
 
 #endif // MAINWINDOW_H
