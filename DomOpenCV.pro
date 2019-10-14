@@ -27,11 +27,11 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-        video/mainvideocapture.cpp
+        video/videoMotion.cpp
 
 HEADERS += \
         mainwindow.h \
-        video/mainvideocapture.h
+        video/videoMotion.h
 
 FORMS += \
         mainwindow.ui

@@ -2,15 +2,16 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "video/mainvideocapture.h"
+#include "video/videoMotion.h"
 
 #define CANT_HABITACIONES 4
+#define MAX_ID_CAMS 10
 
 namespace Ui {
 class MainWindow;
 }
 
-class MainVideoCapture;
+class VideoMotion;
 
 class MainWindow : public QMainWindow
 {
@@ -22,7 +23,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    MainVideoCapture *videoCapture[CANT_HABITACIONES];
+    VideoMotion *videoApp[CANT_HABITACIONES];
     int cams_activas = 0;
 
     // establece los connects de las camaras

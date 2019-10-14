@@ -475,9 +475,9 @@
              <number>0</number>
             </property>
             <widget class="QWidget" name="page">
-             <layout class="QVBoxLayout" name="verticalLayout_14">
+             <layout class="QVBoxLayout" name="verticalLayout_14" stretch="0,20">
               <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_25" stretch="0,0,0,0">
+               <layout class="QHBoxLayout" name="horizontalLayout_25" stretch="0,0,0">
                 <property name="spacing">
                  <number>8</number>
                 </property>
@@ -516,9 +516,6 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QComboBox" name="comboBox_cam_fuente_5"/>
-                </item>
-                <item>
                  <spacer name="horizontalSpacer_30">
                   <property name="orientation">
                    <enum>Qt::Horizontal</enum>
@@ -536,238 +533,6 @@
               <item>
                <layout class="QHBoxLayout" name="horizontalLayout_38">
                 <item>
-                 <layout class="QVBoxLayout" name="verticalLayout_12">
-                  <item>
-                   <widget class="QLabel" name="label_9">
-                    <property name="text">
-                     <string>Intensidad:</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="label_3">
-                    <property name="text">
-                     <string>H_MIN</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_31">
-                    <item>
-                     <widget class="QSlider" name="hminSlider">
-                      <property name="maximum">
-                       <number>255</number>
-                      </property>
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QSpinBox" name="hminBox">
-                      <property name="maximum">
-                       <number>255</number>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="label_4">
-                    <property name="text">
-                     <string>H_MAX</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_32">
-                    <item>
-                     <widget class="QSlider" name="hmaxSlider">
-                      <property name="maximum">
-                       <number>255</number>
-                      </property>
-                      <property name="value">
-                       <number>255</number>
-                      </property>
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QSpinBox" name="hmaxBox">
-                      <property name="maximum">
-                       <number>255</number>
-                      </property>
-                      <property name="value">
-                       <number>255</number>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="label_10">
-                    <property name="text">
-                     <string>Saturacion:</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="label">
-                    <property name="text">
-                     <string>S_MIN</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_33">
-                    <item>
-                     <widget class="QSlider" name="sminSlider">
-                      <property name="maximum">
-                       <number>255</number>
-                      </property>
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QSpinBox" name="sminBox">
-                      <property name="maximum">
-                       <number>255</number>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="label_2">
-                    <property name="text">
-                     <string>S_MAX</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_34">
-                    <item>
-                     <widget class="QSlider" name="smaxSlider">
-                      <property name="maximum">
-                       <number>255</number>
-                      </property>
-                      <property name="value">
-                       <number>255</number>
-                      </property>
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QSpinBox" name="smaxBox">
-                      <property name="maximum">
-                       <number>255</number>
-                      </property>
-                      <property name="value">
-                       <number>255</number>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="label_11">
-                    <property name="text">
-                     <string>Color:</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="label_5">
-                    <property name="text">
-                     <string>V_MIN</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_35">
-                    <item>
-                     <widget class="QSlider" name="vminSlider">
-                      <property name="maximum">
-                       <number>255</number>
-                      </property>
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QSpinBox" name="vminBox">
-                      <property name="maximum">
-                       <number>255</number>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="label_6">
-                    <property name="text">
-                     <string>V_MAX</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_36">
-                    <item>
-                     <widget class="QSlider" name="vmaxSlider">
-                      <property name="maximum">
-                       <number>255</number>
-                      </property>
-                      <property name="value">
-                       <number>255</number>
-                      </property>
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QSpinBox" name="vmaxBox">
-                      <property name="maximum">
-                       <number>255</number>
-                      </property>
-                      <property name="value">
-                       <number>255</number>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="label_8">
-                    <property name="text">
-                     <string>Nombre:</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_37">
-                    <item>
-                     <widget class="QLineEdit" name="nameLineEdit"/>
-                    </item>
-                    <item>
-                     <widget class="QPushButton" name="addButton">
-                      <property name="text">
-                       <string>Agregar</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                 </layout>
-                </item>
-                <item>
                  <layout class="QVBoxLayout" name="verticalLayout_13">
                   <item>
                    <layout class="QHBoxLayout" name="horizontalLayout_26">
@@ -775,7 +540,7 @@
                      <number>8</number>
                     </property>
                     <item>
-                     <widget class="QLabel" name="camRGB_all">
+                     <widget class="QLabel" name="camConfig_1">
                       <property name="minimumSize">
                        <size>
                         <width>0</width>
@@ -809,7 +574,7 @@
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLabel" name="camRGB_actual">
+                     <widget class="QLabel" name="camConfig_2">
                       <property name="minimumSize">
                        <size>
                         <width>0</width>
@@ -850,7 +615,7 @@
                      <number>8</number>
                     </property>
                     <item>
-                     <widget class="QLabel" name="camHSV">
+                     <widget class="QLabel" name="camConfig_3">
                       <property name="minimumSize">
                        <size>
                         <width>0</width>
@@ -884,7 +649,7 @@
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLabel" name="cam_umbral">
+                     <widget class="QLabel" name="camConfig_4">
                       <property name="minimumSize">
                        <size>
                         <width>0</width>
@@ -2051,9 +1816,9 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="imagenes/habitaciones.qrc"/>
-  <include location="iconos/iconos.qrc"/>
   <include location="imagenes/imagenes.qrc"/>
+  <include location="iconos/iconos.qrc"/>
+  <include location="imagenes/habitaciones.qrc"/>
  </resources>
  <connections>
   <connection>
@@ -2133,102 +1898,6 @@
     <hint type="destinationlabel">
      <x>335</x>
      <y>99</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>hminSlider</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>hminBox</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>350</x>
-     <y>193</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>450</x>
-     <y>200</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>hmaxSlider</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>hmaxBox</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>370</x>
-     <y>245</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>443</x>
-     <y>246</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>sminSlider</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>sminBox</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>327</x>
-     <y>314</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>443</x>
-     <y>323</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>smaxSlider</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>smaxBox</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>372</x>
-     <y>375</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>444</x>
-     <y>370</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>vminSlider</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>vminBox</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>369</x>
-     <y>450</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>453</x>
-     <y>457</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>vmaxSlider</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>vmaxBox</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>353</x>
-     <y>504</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>450</x>
-     <y>509</y>
     </hint>
    </hints>
   </connection>

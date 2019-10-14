@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "video/mainvideocapture.h"
+#include "video/videoMotion.h"
 
 // para debug
 #include <QDebug>
@@ -14,14 +14,16 @@ MainWindow::MainWindow(QWidget *parent) :
     // openCV video habitaciones y configuracion
     int idVidCap = 0;
     for (int idDevice = 0; idDevice < MAX_ID_CAMS; idDevice++) {
-        if( MainVideoCapture::isCamIdOk(idDevice) ){
-            qDebug() << "Nueva camara: " << idVidCap +1 << " en id Devide: " << idDevice;
-            videoCapture[idVidCap] = new MainVideoCapture(idDevice,this);
+        if( VideoMotion::isCamIdOk(idDevice) ){
+            qDebug() << "Nueva camara: " << idVidCap +1 <<
+                        " en id Devide: " << idDevice;
+            videoApp[idVidCap] = new VideoMotion(idDevice,this);
             idVidCap ++;
         }
         if( idVidCap > CANT_HABITACIONES-1)
             break;
     }
+
     cams_activas = idVidCap;
     qDebug() << "Cantidad de camara: " << cams_activas;
 
@@ -33,20 +35,10 @@ MainWindow::~MainWindow()
 {
     delete ui;
     for (int idCam = 0; idCam < cams_activas; idCam++) {
-        videoCapture[idCam]->terminate();
+        videoApp[idCam]->mVideoCap.release();
     }
 }
 
-/////////////// Update parametros de configuracion de deteccion
-void MainWindow::UpdateDetectParametros(int idCam){
-    // get parametros para creacion de deteccion de bordes
-    videoCapture[idCam]->H_MIN = ui->hminBox->text().toInt();
-    videoCapture[idCam]->H_MAX = ui->hmaxBox->text().toInt();
-    videoCapture[idCam]->S_MIN = ui->sminBox->text().toInt();
-    videoCapture[idCam]->S_MAX = ui->smaxBox->text().toInt();
-    videoCapture[idCam]->V_MIN = ui->vminBox->text().toInt();
-    videoCapture[idCam]->V_MAX = ui->vmaxBox->text().toInt();
-}
 
 // establece los connects de las camaras
 void MainWindow::CamConnects(){
@@ -66,80 +58,70 @@ void MainWindow::CamConnects(){
     //// Camara del banio
     int idCam = 0;
     if( cams_activas > idCam){
-        connect(videoCapture[idCam], &MainVideoCapture::newPixmapCapture,this,[&](){
-            ui->opencvFrame_1->setPixmap(
-                        videoCapture[idCam]->getAllDetections().scaled(320,240));
-            // usando .scaled(ui->opencvFrame->width(),ui->opencvFrame->height()) se va agrandando la pantalla sola!
+        // no anda idCam usado dentro de los connects, usa unica camara, raro
+        connect(videoApp[0], &VideoMotion::newPixmapCapture,this,[&](){
+            ui->opencvFrame_1->setPixmap( videoApp[0]->pixmap().scaled(320,240) );
+            ui->camConfig_1->setPixmap( videoApp[0]->pixmapDST().scaled(320,240) );
         });
         // Presencias en habitacion
-        connect(videoCapture[idCam], &MainVideoCapture::presenciaDetectada,this,[&](){
-            ui->Label_Banio->setPixmap(QPixmap( PicsHabON[idCam]));
+        connect(videoApp[0], &VideoMotion::presenciaDetectada,this,[&](){
+            ui->Label_Banio->setPixmap(QPixmap( PicsHabON[0]));
         });
-        connect(videoCapture[idCam], &MainVideoCapture::sinPresencia,this,[&](){
-            ui->Label_Banio->setPixmap(QPixmap( PicsHabOFF[idCam]));
+        connect(videoApp[0], &VideoMotion::sinPresencia,this,[&](){
+            ui->Label_Banio->setPixmap(QPixmap( PicsHabOFF[0]));
         });
-        videoCapture[idCam]->start(QThread::HighPriority);
+        videoApp[0]->start(QThread::HighPriority);
     }
 
     //// Camara del dormitorio
     idCam = 1;
     if( cams_activas > idCam){
-        connect(videoCapture[idCam], &MainVideoCapture::newPixmapCapture,this,[&](){
-            ui->opencvFrame_2->setPixmap(
-                        videoCapture[idCam]->getAllDetections().scaled(320,240));
+        connect(videoApp[1], &VideoMotion::newPixmapCapture,this,[&](){
+            ui->opencvFrame_2->setPixmap( videoApp[1]->pixmap().scaled(320,240) );
+            ui->camConfig_2->setPixmap( videoApp[1]->pixmapDST().scaled(320,240) );
         });
         // Presencias en habitacion
-        connect(videoCapture[idCam], &MainVideoCapture::presenciaDetectada,this,[&](){
-            ui->Label_Dormitorio->setPixmap(QPixmap( PicsHabON[idCam]));
+        connect(videoApp[1], &VideoMotion::presenciaDetectada,this,[&](){
+            ui->Label_Dormitorio->setPixmap(QPixmap( PicsHabON[1]));
         });
-        connect(videoCapture[idCam], &MainVideoCapture::sinPresencia,this,[&](){
-            ui->Label_Dormitorio->setPixmap(QPixmap( PicsHabOFF[idCam]));
+        connect(videoApp[1], &VideoMotion::sinPresencia,this,[&](){
+            ui->Label_Dormitorio->setPixmap(QPixmap( PicsHabOFF[1]));
         });
-        videoCapture[idCam]->start(QThread::HighPriority);
+        videoApp[1]->start(QThread::HighPriority);
     }
 
     //// Camara del living
     idCam = 2;
     if( cams_activas > idCam){
-        connect(videoCapture[idCam], &MainVideoCapture::newPixmapCapture,this,[&](){
-            ui->opencvFrame_3->setPixmap(
-                        videoCapture[idCam]->getAllDetections().scaled(320,240));
+        connect(videoApp[2], &VideoMotion::newPixmapCapture,this,[&](){
+            ui->opencvFrame_3->setPixmap(videoApp[2]->pixmap().scaled(320,240) );
+            ui->camConfig_3->setPixmap(videoApp[2]->pixmapDST().scaled(320,240) );
         });
         // Presencias en habitacion
-        connect(videoCapture[idCam], &MainVideoCapture::presenciaDetectada,this,[&](){
-            ui->Label_Sala->setPixmap(QPixmap( PicsHabON[idCam]));
+        connect(videoApp[2], &VideoMotion::presenciaDetectada,this,[&](){
+            ui->Label_Sala->setPixmap(QPixmap( PicsHabON[2]));
         });
-        connect(videoCapture[idCam], &MainVideoCapture::sinPresencia,this,[&](){
-            ui->Label_Sala->setPixmap(QPixmap( PicsHabOFF[idCam]));
+        connect(videoApp[2], &VideoMotion::sinPresencia,this,[&](){
+            ui->Label_Sala->setPixmap(QPixmap( PicsHabOFF[2]));
         });
-        videoCapture[idCam]->start(QThread::HighPriority);
+        videoApp[2]->start(QThread::HighPriority);
     }
 
     //// Camara del cocina
     idCam = 3;
     if( cams_activas > idCam){
-        connect(videoCapture[idCam], &MainVideoCapture::newPixmapCapture,this,[&](){
-            ui->opencvFrame_4->setPixmap(
-                        videoCapture[idCam]->getAllDetections().scaled(320,240));
+        connect(videoApp[3], &VideoMotion::newPixmapCapture,this,[&](){
+            ui->opencvFrame_4->setPixmap(videoApp[3]->pixmap().scaled(320,240) );
+            ui->camConfig_4->setPixmap(videoApp[3]->pixmapDST().scaled(320,240) );
         });
         // Presencias en habitacion
-        connect(videoCapture[idCam], &MainVideoCapture::presenciaDetectada,this,[&](){
-            ui->Label_Cocina->setPixmap(QPixmap( PicsHabON[idCam]));
+        connect(videoApp[3], &VideoMotion::presenciaDetectada,this,[&](){
+            ui->Label_Cocina->setPixmap(QPixmap( PicsHabON[3]));
         });
-        connect(videoCapture[idCam], &MainVideoCapture::sinPresencia,this,[&](){
-            ui->Label_Cocina->setPixmap(QPixmap( PicsHabOFF[idCam]));
+        connect(videoApp[3], &VideoMotion::sinPresencia,this,[&](){
+            ui->Label_Cocina->setPixmap(QPixmap( PicsHabOFF[3]));
         });
-        videoCapture[idCam]->start(QThread::HighPriority);
+        videoApp[3]->start(QThread::HighPriority);
     }
-
-
-    //conect para la camara a configurar
-    connect(videoCapture[0], &MainVideoCapture::newPixmapCapture,this,[&](){
-        ui->camRGB_all->setPixmap(videoCapture[0]->getAllDetections().scaled(320,240)); // mostrar imagen RGB
-        ui->camRGB_actual->setPixmap(videoCapture[0]->getActualDetect().scaled(320,240)); // mostrar imagen // procesar y mostrar imagen HSV
-        ui->camHSV->setPixmap(videoCapture[0]->getHSVpixmap().scaled(320,240));
-        ui->cam_umbral->setPixmap(videoCapture[0]->getBinarioDetec().scaled(320,240));
-        UpdateDetectParametros(0);
-    });
 
 }
